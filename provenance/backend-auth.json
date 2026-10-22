@@ -1,0 +1,27 @@
+{
+  "capturedAt": "2026-10-20T12:57:40.139468+00:00",
+  "policy": "single-use-per-request",
+  "ttlSeconds": 600,
+  "files": [
+    {
+      "source": "apps/agents-server/src/main/kotlin/cc/lingya/xiaolingtong/agents/server/controller/OpenApiChannelChatController.kt",
+      "sha256": "550b89fc3faeb78ec0504c8a3f2c9a33542f4bf8e687d6da1d533042b58163e5"
+    },
+    {
+      "source": "apps/agents-server/src/main/kotlin/cc/lingya/xiaolingtong/agents/server/service/OpenApiPreSignedTokenService.kt",
+      "sha256": "f20f348a11e777f552f05147fc28b3c7a3cd727bf936955bc76e161b78f9de26"
+    },
+    {
+      "source": "apps/agents-server/src/main/kotlin/cc/lingya/xiaolingtong/agents/server/service/impl/OpenApiPreSignedTokenServiceImpl.kt",
+      "sha256": "ddb5c60e0458c2ef345041fc5694dc17030f2309605de49ed2003e2e0e17f605"
+    },
+    {
+      "source": "apps/agents-server/src/main/kotlin/cc/lingya/xiaolingtong/agents/server/auth/OpenApiAuthenticationFilter.kt",
+      "sha256": "7d89fa82fd989d570259c315340922882f93fba288a0d9c54c2993589d004497"
+    },
+    {
+      "source": "apps/agents-server/src/main/kotlin/cc/lingya/xiaolingtong/agents/server/model/dto/output/OpenApiPreSignedTokenOutput.kt",
+      "sha256": "c00635c38d386f62f0cf9a9ae0ec6270d4e490154c5811327c41d0ce9fd72b3e"
+    }
+  ]
+}

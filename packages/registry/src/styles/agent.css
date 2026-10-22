@@ -1,0 +1,31 @@
+/* 仅映射移植组件的语义别名，不设置宿主字体和品牌主题。 */
+@theme inline {
+  --color-primary-hover: var(--primary);
+  --color-primary-pressed: var(--primary);
+  --color-primary-soft: var(--muted);
+  --color-primary-soft-hover: var(--accent);
+  --color-brand-action: var(--primary);
+  --color-brand-action-foreground: var(--primary-foreground);
+  --color-brand-action-hover: var(--primary);
+  --color-control-active: var(--primary);
+  --color-control-active-foreground: var(--primary-foreground);
+  --color-control-active-hover: var(--primary);
+  --color-destructive-hover: var(--destructive);
+  --color-destructive-foreground: #fff;
+  --color-success: #166534;
+  --color-success-foreground: #fff;
+  --color-warning: #92400e;
+  --color-warning-foreground: #fff;
+  --color-info: #1d4ed8;
+  --color-info-foreground: #fff;
+  --color-border-subtle: var(--border);
+  --color-surface: var(--background);
+  --color-surface-hover: var(--accent);
+  --color-workspace: var(--background);
+  --color-app-shell: var(--muted);
+}
+@keyframes shimmer { from { background-position: 200% 0; } to { background-position: -200% 0; } }
+@keyframes caret-blink { 0%,70%,100% { opacity: 1; } 20%,50% { opacity: 0; } }
+@media (prefers-reduced-motion: reduce) {
+  [data-slot="conversation"] *, [data-slot="prompt-input"] * { animation-duration: .01ms !important; }
+}

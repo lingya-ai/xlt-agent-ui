@@ -1,0 +1,832 @@
+{
+  "package": "@lingya-ai/agents-sdk",
+  "version": "0.7.0",
+  "contract": "0.1.7",
+  "localTarballSha256": "223e57303b434dc70a457edc05f62c7b7cba6e9265469262823ad38dc614666b",
+  "operations": [
+    {
+      "operationId": "getAgentsConfig",
+      "group": "configuration",
+      "method": "GET",
+      "relativePath": "/config",
+      "response": {
+        "status": "200",
+        "mediaType": "application/json",
+        "schema": "AgentsConfig",
+        "format": null
+      }
+    },
+    {
+      "operationId": "getConversationConfig",
+      "group": "configuration",
+      "method": "GET",
+      "relativePath": "/conversations/{conversationId}/config",
+      "response": {
+        "status": "200",
+        "mediaType": "application/json",
+        "schema": "ConversationConfig",
+        "format": null
+      }
+    },
+    {
+      "operationId": "createChat",
+      "group": "chat",
+      "method": "POST",
+      "relativePath": "",
+      "response": {
+        "status": "201",
+        "mediaType": "application/json",
+        "schema": "AiChatSubmission",
+        "format": null
+      }
+    },
+    {
+      "operationId": "continueChat",
+      "group": "chat",
+      "method": "POST",
+      "relativePath": "/conversations/{conversationId}",
+      "response": {
+        "status": "201",
+        "mediaType": "application/json",
+        "schema": "AiChatSubmission",
+        "format": null
+      }
+    },
+    {
+      "operationId": "deleteConversation",
+      "group": "conversations",
+      "method": "DELETE",
+      "relativePath": "/conversations/{conversationId}",
+      "response": {
+        "status": "200",
+        "mediaType": null,
+        "schema": null,
+        "format": null
+      }
+    },
+    {
+      "operationId": "getConversationSummary",
+      "group": "conversations",
+      "method": "GET",
+      "relativePath": "/conversations/{conversationId}",
+      "response": {
+        "status": "200",
+        "mediaType": "application/json",
+        "schema": "ConversationSummary",
+        "format": null
+      }
+    },
+    {
+      "operationId": "streamChatEvents",
+      "group": "chat",
+      "method": "POST",
+      "relativePath": "/conversations/{conversationId}/stream",
+      "response": {
+        "status": "200",
+        "mediaType": "text/event-stream",
+        "schema": "AiChatBriefEvent",
+        "format": null
+      }
+    },
+    {
+      "operationId": "probeEventStream",
+      "group": "chat",
+      "method": "POST",
+      "relativePath": "/stream-probe",
+      "response": {
+        "status": "200",
+        "mediaType": "text/event-stream",
+        "schema": "ChatStreamProbeEvent",
+        "format": null
+      }
+    },
+    {
+      "operationId": "interruptConversation",
+      "group": "chat",
+      "method": "DELETE",
+      "relativePath": "/conversations/{conversationId}/interrupt",
+      "response": {
+        "status": "200",
+        "mediaType": null,
+        "schema": null,
+        "format": null
+      }
+    },
+    {
+      "operationId": "compactConversation",
+      "group": "chat",
+      "method": "POST",
+      "relativePath": "/conversations/{conversationId}/compact",
+      "response": {
+        "status": "202",
+        "mediaType": null,
+        "schema": null,
+        "format": null
+      }
+    },
+    {
+      "operationId": "getConversationContextUsage",
+      "group": "conversations",
+      "method": "GET",
+      "relativePath": "/conversations/{conversationId}/context-usage",
+      "response": {
+        "status": "200",
+        "mediaType": "application/json",
+        "schema": "ConversationContextUsage",
+        "format": null
+      }
+    },
+    {
+      "operationId": "listConversations",
+      "group": "conversations",
+      "method": "GET",
+      "relativePath": "/conversations",
+      "response": {
+        "status": "200",
+        "mediaType": "application/json",
+        "schema": "ConversationSummaryList",
+        "format": null
+      }
+    },
+    {
+      "operationId": "listActiveConversations",
+      "group": "conversations",
+      "method": "GET",
+      "relativePath": "/conversations/active",
+      "response": {
+        "status": "200",
+        "mediaType": "application/json",
+        "schema": "ConversationIds",
+        "format": null
+      }
+    },
+    {
+      "operationId": "listUnreadConversations",
+      "group": "conversations",
+      "method": "GET",
+      "relativePath": "/conversations/unread",
+      "response": {
+        "status": "200",
+        "mediaType": "application/json",
+        "schema": "ConversationIds",
+        "format": null
+      }
+    },
+    {
+      "operationId": "queryConversationActivities",
+      "group": "conversations",
+      "method": "POST",
+      "relativePath": "/conversations/activity/query",
+      "response": {
+        "status": "200",
+        "mediaType": "application/json",
+        "schema": "ConversationActivityList",
+        "format": null
+      }
+    },
+    {
+      "operationId": "markConversationRead",
+      "group": "conversations",
+      "method": "PUT",
+      "relativePath": "/conversations/{conversationId}/read-receipt",
+      "response": {
+        "status": "200",
+        "mediaType": "application/json",
+        "schema": "ConversationReadReceipt",
+        "format": null
+      }
+    },
+    {
+      "operationId": "getConversationStats",
+      "group": "conversations",
+      "method": "GET",
+      "relativePath": "/conversations/stats",
+      "response": {
+        "status": "200",
+        "mediaType": "application/json",
+        "schema": "ConversationStats",
+        "format": null
+      }
+    },
+    {
+      "operationId": "getConversationTitle",
+      "group": "conversations",
+      "method": "GET",
+      "relativePath": "/conversations/{conversationId}/title",
+      "response": {
+        "status": "200",
+        "mediaType": "application/json",
+        "schema": "ConversationTitle",
+        "format": null
+      }
+    },
+    {
+      "operationId": "updateConversationTitle",
+      "group": "conversations",
+      "method": "PATCH",
+      "relativePath": "/conversations/{conversationId}/title",
+      "response": {
+        "status": "200",
+        "mediaType": "application/json",
+        "schema": "ConversationMetadata",
+        "format": null
+      }
+    },
+    {
+      "operationId": "updateConversationStatus",
+      "group": "conversations",
+      "method": "PATCH",
+      "relativePath": "/conversations/{conversationId}/status",
+      "response": {
+        "status": "202",
+        "mediaType": null,
+        "schema": null,
+        "format": null
+      }
+    },
+    {
+      "operationId": "getSqlQueryResult",
+      "group": "sql",
+      "method": "GET",
+      "relativePath": "/conversations/{conversationId}/sql-query-results/{resultId}",
+      "response": {
+        "status": "200",
+        "mediaType": "application/json",
+        "schema": "SqlQueryResultPage",
+        "format": null
+      }
+    },
+    {
+      "operationId": "getSqlQueryChartData",
+      "group": "sql",
+      "method": "GET",
+      "relativePath": "/conversations/{conversationId}/sql-query-results/{resultId}/chart-data",
+      "response": {
+        "status": "200",
+        "mediaType": "application/json",
+        "schema": "SqlChartDataset",
+        "format": null
+      }
+    },
+    {
+      "operationId": "exportSqlQueryResult",
+      "group": "sql",
+      "method": "GET",
+      "relativePath": "/conversations/{conversationId}/sql-query-results/{resultId}/export",
+      "response": {
+        "status": "200",
+        "mediaType": "text/csv",
+        "schema": null,
+        "format": "binary"
+      }
+    },
+    {
+      "operationId": "listConversationMessages",
+      "group": "messages",
+      "method": "GET",
+      "relativePath": "/conversations/{conversationId}/messages",
+      "response": {
+        "status": "200",
+        "mediaType": "application/json",
+        "schema": "ConversationMessagePage",
+        "format": null
+      }
+    },
+    {
+      "operationId": "getConversationMessage",
+      "group": "messages",
+      "method": "GET",
+      "relativePath": "/conversations/{conversationId}/messages/{messageId}",
+      "response": {
+        "status": "200",
+        "mediaType": "application/json",
+        "schema": "ConversationMessage",
+        "format": null
+      }
+    },
+    {
+      "operationId": "listConversationAsyncTasks",
+      "group": "messages",
+      "method": "GET",
+      "relativePath": "/conversations/{conversationId}/async-tasks",
+      "response": {
+        "status": "200",
+        "mediaType": "application/json",
+        "schema": "AsyncTaskPage",
+        "format": null
+      }
+    },
+    {
+      "operationId": "syncConversationAsyncTasks",
+      "group": "messages",
+      "method": "GET",
+      "relativePath": "/conversations/{conversationId}/async-tasks/sync",
+      "response": {
+        "status": "200",
+        "mediaType": "application/json",
+        "schema": "AgentAsyncTaskSync",
+        "format": null
+      }
+    },
+    {
+      "operationId": "getConversationAsyncTask",
+      "group": "messages",
+      "method": "GET",
+      "relativePath": "/conversations/{conversationId}/async-tasks/{asyncTaskId}",
+      "response": {
+        "status": "200",
+        "mediaType": "application/json",
+        "schema": "AsyncTask",
+        "format": null
+      }
+    },
+    {
+      "operationId": "listConversationSubagents",
+      "group": "messages",
+      "method": "GET",
+      "relativePath": "/conversations/{conversationId}/subagents",
+      "response": {
+        "status": "200",
+        "mediaType": "application/json",
+        "schema": "SubagentTaskPage",
+        "format": null
+      }
+    },
+    {
+      "operationId": "syncConversationSubagents",
+      "group": "messages",
+      "method": "GET",
+      "relativePath": "/conversations/{conversationId}/subagents/sync",
+      "response": {
+        "status": "200",
+        "mediaType": "application/json",
+        "schema": "SubagentTaskSync",
+        "format": null
+      }
+    },
+    {
+      "operationId": "getConversationSubagent",
+      "group": "messages",
+      "method": "GET",
+      "relativePath": "/conversations/{conversationId}/subagents/{subagentTaskId}",
+      "response": {
+        "status": "200",
+        "mediaType": "application/json",
+        "schema": "SubagentTask",
+        "format": null
+      }
+    },
+    {
+      "operationId": "cancelConversationSubagent",
+      "group": "messages",
+      "method": "DELETE",
+      "relativePath": "/conversations/{conversationId}/subagents/{subagentTaskId}",
+      "response": {
+        "status": "200",
+        "mediaType": "application/json",
+        "schema": "SubagentTask",
+        "format": null
+      }
+    },
+    {
+      "operationId": "getConversationSubagentResult",
+      "group": "messages",
+      "method": "GET",
+      "relativePath": "/conversations/{conversationId}/subagents/{subagentTaskId}/result",
+      "response": {
+        "status": "200",
+        "mediaType": "application/json",
+        "schema": "SubagentTaskResult",
+        "format": null
+      }
+    },
+    {
+      "operationId": "cancelQueuedMessage",
+      "group": "messages",
+      "method": "DELETE",
+      "relativePath": "/conversations/{conversationId}/messages/{messageId}/queue",
+      "response": {
+        "status": "200",
+        "mediaType": "application/json",
+        "schema": "ConversationMessage",
+        "format": null
+      }
+    },
+    {
+      "operationId": "getChatEvents",
+      "group": "events",
+      "method": "GET",
+      "relativePath": "/events",
+      "response": {
+        "status": "200",
+        "mediaType": "application/json",
+        "schema": "AiChatBriefEventList",
+        "format": null
+      }
+    },
+    {
+      "operationId": "getChatEventsBatch",
+      "group": "events",
+      "method": "POST",
+      "relativePath": "/events/batch",
+      "response": {
+        "status": "201",
+        "mediaType": "application/json",
+        "schema": "AiChatEventsBatch",
+        "format": null
+      }
+    },
+    {
+      "operationId": "approvePlan",
+      "group": "interactions",
+      "method": "POST",
+      "relativePath": "/plan/approve",
+      "response": {
+        "status": "201",
+        "mediaType": "application/json",
+        "schema": "OperationResult",
+        "format": null
+      }
+    },
+    {
+      "operationId": "getPlanStatus",
+      "group": "interactions",
+      "method": "GET",
+      "relativePath": "/plan/{planId}/status",
+      "response": {
+        "status": "200",
+        "mediaType": "application/json",
+        "schema": "PlanStatus",
+        "format": null
+      }
+    },
+    {
+      "operationId": "getUserInputStatus",
+      "group": "interactions",
+      "method": "GET",
+      "relativePath": "/user-input/{questionId}/status",
+      "response": {
+        "status": "200",
+        "mediaType": "application/json",
+        "schema": "UserInputStatus",
+        "format": null
+      }
+    },
+    {
+      "operationId": "answerUserInput",
+      "group": "interactions",
+      "method": "POST",
+      "relativePath": "/user-input/answer",
+      "response": {
+        "status": "201",
+        "mediaType": "application/json",
+        "schema": "OperationResult",
+        "format": null
+      }
+    },
+    {
+      "operationId": "createPreSignedUpload",
+      "group": "files",
+      "method": "POST",
+      "relativePath": "/files/pre-signed-url/write",
+      "response": {
+        "status": "201",
+        "mediaType": "application/json",
+        "schema": "GeneratePreSignedUrlOutput",
+        "format": null
+      }
+    },
+    {
+      "operationId": "confirmPreSignedUpload",
+      "group": "files",
+      "method": "POST",
+      "relativePath": "/files/pre-signed-url/confirm",
+      "response": {
+        "status": "201",
+        "mediaType": "application/json",
+        "schema": "AgentFile",
+        "format": null
+      }
+    },
+    {
+      "operationId": "createFileByContentMd5",
+      "group": "files",
+      "method": "POST",
+      "relativePath": "/files/contentMd5",
+      "response": {
+        "status": "201",
+        "mediaType": "application/json",
+        "schema": "AgentFile",
+        "format": null
+      }
+    },
+    {
+      "operationId": "fileExistsByContentMd5",
+      "group": "files",
+      "method": "GET",
+      "relativePath": "/files/meta/contentMd5",
+      "response": {
+        "status": "200",
+        "mediaType": "application/json",
+        "schema": "FileExists",
+        "format": null
+      }
+    },
+    {
+      "operationId": "getConversationFilePreview",
+      "group": "files",
+      "method": "GET",
+      "relativePath": "/conversations/{conversationId}/files/{fileId}/preview",
+      "response": {
+        "status": "200",
+        "mediaType": "application/json",
+        "schema": "PreSignedReadUrl",
+        "format": null
+      }
+    },
+    {
+      "operationId": "getPlanIntermediateFilePreview",
+      "group": "files",
+      "method": "GET",
+      "relativePath": "/conversations/{conversationId}/messages/{messageId}/plan-intermediate-files/{fileId}/preview",
+      "response": {
+        "status": "200",
+        "mediaType": "application/json",
+        "schema": "PreSignedReadUrl",
+        "format": null
+      }
+    },
+    {
+      "operationId": "getCitationMetadataBatch",
+      "group": "knowledge",
+      "method": "POST",
+      "relativePath": "/knowledge-bases/citations/metadata",
+      "response": {
+        "status": "201",
+        "mediaType": "application/json",
+        "schema": "CitationMetadataList",
+        "format": null
+      }
+    },
+    {
+      "operationId": "getCitationMetadata",
+      "group": "knowledge",
+      "method": "GET",
+      "relativePath": "/knowledge-bases/citations/{citationType}/{referenceId}/metadata",
+      "response": {
+        "status": "200",
+        "mediaType": "application/json",
+        "schema": "CitationMetadata",
+        "format": null
+      }
+    },
+    {
+      "operationId": "listWorkspaceArtifacts",
+      "group": "workspace",
+      "method": "GET",
+      "relativePath": "/conversations/{conversationId}/workspace/files",
+      "response": {
+        "status": "200",
+        "mediaType": "application/json",
+        "schema": "WorkspaceArtifactList",
+        "format": null
+      }
+    },
+    {
+      "operationId": "getWorkspaceFilePreview",
+      "group": "workspace",
+      "method": "GET",
+      "relativePath": "/conversations/{conversationId}/workspace/files/preview",
+      "response": {
+        "status": "200",
+        "mediaType": "application/json",
+        "schema": "PreSignedReadUrl",
+        "format": null
+      }
+    },
+    {
+      "operationId": "createOpenApiToken",
+      "group": "configuration",
+      "method": "POST",
+      "relativePath": "/presign",
+      "response": {
+        "status": "201",
+        "mediaType": "application/json",
+        "schema": "OpenApiToken",
+        "format": null
+      }
+    },
+    {
+      "operationId": "listConversationGroups",
+      "group": "conversations",
+      "method": "GET",
+      "relativePath": "/conversation-groups",
+      "response": {
+        "status": "200",
+        "mediaType": "application/json",
+        "schema": "ConversationGroupList",
+        "format": null
+      }
+    },
+    {
+      "operationId": "createConversationGroup",
+      "group": "conversations",
+      "method": "POST",
+      "relativePath": "/conversation-groups",
+      "response": {
+        "status": "201",
+        "mediaType": "application/json",
+        "schema": "ConversationGroup",
+        "format": null
+      }
+    },
+    {
+      "operationId": "renameConversationGroup",
+      "group": "conversations",
+      "method": "PATCH",
+      "relativePath": "/conversation-groups/{groupId}",
+      "response": {
+        "status": "200",
+        "mediaType": "application/json",
+        "schema": "ConversationGroup",
+        "format": null
+      }
+    },
+    {
+      "operationId": "deleteConversationGroup",
+      "group": "conversations",
+      "method": "DELETE",
+      "relativePath": "/conversation-groups/{groupId}",
+      "response": {
+        "status": "200",
+        "mediaType": "application/json",
+        "schema": "ConversationGroupDeleted",
+        "format": null
+      }
+    },
+    {
+      "operationId": "moveConversationToGroup",
+      "group": "conversations",
+      "method": "PATCH",
+      "relativePath": "/conversations/{conversationId}/group",
+      "response": {
+        "status": "200",
+        "mediaType": "application/json",
+        "schema": "ConversationMetadata",
+        "format": null
+      }
+    },
+    {
+      "operationId": "syncConversationMessages",
+      "group": "messages",
+      "method": "GET",
+      "relativePath": "/conversations/{conversationId}/messages/sync",
+      "response": {
+        "status": "200",
+        "mediaType": "application/json",
+        "schema": "ConversationMessageSync",
+        "format": null
+      }
+    },
+    {
+      "operationId": "getMessagePlanStatus",
+      "group": "interactions",
+      "method": "GET",
+      "relativePath": "/conversations/{conversationId}/messages/{messageId}/plan/status",
+      "response": {
+        "status": "200",
+        "mediaType": "application/json",
+        "schema": "PlanStatus",
+        "format": null
+      }
+    },
+    {
+      "operationId": "getGoal",
+      "group": "chat",
+      "method": "GET",
+      "relativePath": "/conversations/{conversationId}/goal",
+      "response": {
+        "status": "200",
+        "mediaType": "application/json",
+        "schema": "AgentGoalView",
+        "format": null
+      }
+    },
+    {
+      "operationId": "editGoal",
+      "group": "chat",
+      "method": "PATCH",
+      "relativePath": "/conversations/{conversationId}/goal",
+      "response": {
+        "status": "200",
+        "mediaType": "application/json",
+        "schema": "AgentGoal",
+        "format": null
+      }
+    },
+    {
+      "operationId": "getGoalHistory",
+      "group": "chat",
+      "method": "GET",
+      "relativePath": "/conversations/{conversationId}/goal/history",
+      "response": {
+        "status": "200",
+        "mediaType": "application/json",
+        "schema": "AgentGoalHistory",
+        "format": null
+      }
+    },
+    {
+      "operationId": "pauseGoal",
+      "group": "chat",
+      "method": "POST",
+      "relativePath": "/conversations/{conversationId}/goal/pause",
+      "response": {
+        "status": "201",
+        "mediaType": "application/json",
+        "schema": "AgentGoal",
+        "format": null
+      }
+    },
+    {
+      "operationId": "resumeGoal",
+      "group": "chat",
+      "method": "POST",
+      "relativePath": "/conversations/{conversationId}/goal/resume",
+      "response": {
+        "status": "201",
+        "mediaType": "application/json",
+        "schema": "AgentGoal",
+        "format": null
+      }
+    },
+    {
+      "operationId": "clearGoal",
+      "group": "chat",
+      "method": "POST",
+      "relativePath": "/conversations/{conversationId}/goal/clear",
+      "response": {
+        "status": "201",
+        "mediaType": "application/json",
+        "schema": "AgentGoal",
+        "format": null
+      }
+    }
+  ],
+  "websocket": {
+    "path": "/api/agents/channel/openapi/v1/{channelId}/chat/conversations/{conversationId}/stream/ws",
+    "method": "GET",
+    "query": {
+      "messageId": {
+        "type": "string",
+        "required": true
+      }
+    },
+    "authentication": {
+      "tokenSubprotocolPrefix": "xlt-openapi-token.",
+      "hmac": "request-headers"
+    },
+    "frames": {
+      "ready": {
+        "required": [
+          "id",
+          "event"
+        ],
+        "event": "ready"
+      },
+      "business": {
+        "required": [
+          "id",
+          "event",
+          "data"
+        ],
+        "dataSchema": "AiChatBriefEvent"
+      },
+      "complete": {
+        "required": [
+          "id",
+          "event"
+        ],
+        "event": "complete"
+      },
+      "transportError": {
+        "required": [
+          "id",
+          "event",
+          "data"
+        ],
+        "event": "transport-error",
+        "data": {
+          "code": "string",
+          "message": "string"
+        }
+      }
+    },
+    "completion": {
+      "endEvent": "end",
+      "closeOnEnd": true,
+      "completeFrame": "complete",
+      "normalCloseCode": 1000
+    }
+  }
+}

@@ -1,0 +1,587 @@
+[
+  {
+    "id": "presign",
+    "method": "POST",
+    "path": "/presign",
+    "source": "OpenApiChannelChatController.kt",
+    "line": 70,
+    "feature": "agent-client",
+    "transport": "server"
+  },
+  {
+    "id": "getAgentsConfig",
+    "method": "GET",
+    "path": "/config",
+    "source": "AbstractAgentsController.kt",
+    "line": 373,
+    "feature": "agent-client",
+    "transport": "json"
+  },
+  {
+    "id": "getConversationConfig",
+    "method": "GET",
+    "path": "/conversations/{conversationId}/config",
+    "source": "AbstractAgentsController.kt",
+    "line": 408,
+    "feature": "agent-conversations",
+    "transport": "json"
+  },
+  {
+    "id": "createChatStream",
+    "method": "POST",
+    "path": "",
+    "source": "AbstractAgentsController.kt",
+    "line": 428,
+    "feature": "agent-client",
+    "transport": "json"
+  },
+  {
+    "id": "continueChat",
+    "method": "POST",
+    "path": "/conversations/{conversationId}",
+    "source": "AbstractAgentsController.kt",
+    "line": 445,
+    "feature": "agent-conversations",
+    "transport": "json"
+  },
+  {
+    "id": "getGoal",
+    "method": "GET",
+    "path": "/conversations/{conversationId}/goal",
+    "source": "AbstractAgentsController.kt",
+    "line": 958,
+    "feature": "agent-goal",
+    "transport": "json"
+  },
+  {
+    "id": "getGoalHistory",
+    "method": "GET",
+    "path": "/conversations/{conversationId}/goal/history",
+    "source": "AbstractAgentsController.kt",
+    "line": 968,
+    "feature": "agent-goal",
+    "transport": "json"
+  },
+  {
+    "id": "editGoal",
+    "method": "PATCH",
+    "path": "/conversations/{conversationId}/goal",
+    "source": "AbstractAgentsController.kt",
+    "line": 980,
+    "feature": "agent-goal",
+    "transport": "json"
+  },
+  {
+    "id": "pauseGoal",
+    "method": "POST",
+    "path": "/conversations/{conversationId}/goal/pause",
+    "source": "AbstractAgentsController.kt",
+    "line": 991,
+    "feature": "agent-goal",
+    "transport": "json"
+  },
+  {
+    "id": "resumeGoal",
+    "method": "POST",
+    "path": "/conversations/{conversationId}/goal/resume",
+    "source": "AbstractAgentsController.kt",
+    "line": 1002,
+    "feature": "agent-goal",
+    "transport": "json"
+  },
+  {
+    "id": "clearGoal",
+    "method": "POST",
+    "path": "/conversations/{conversationId}/goal/clear",
+    "source": "AbstractAgentsController.kt",
+    "line": 1015,
+    "feature": "agent-goal",
+    "transport": "json"
+  },
+  {
+    "id": "interruptByConversation",
+    "method": "DELETE",
+    "path": "/conversations/{conversationId}/interrupt",
+    "source": "AbstractAgentsController.kt",
+    "line": 1028,
+    "feature": "agent-conversations",
+    "transport": "json"
+  },
+  {
+    "id": "compactByConversation",
+    "method": "POST",
+    "path": "/conversations/{conversationId}/compact",
+    "source": "AbstractAgentsController.kt",
+    "line": 1049,
+    "feature": "agent-conversations",
+    "transport": "json"
+  },
+  {
+    "id": "getConversationContextUsage",
+    "method": "GET",
+    "path": "/conversations/{conversationId}/context-usage",
+    "source": "AbstractAgentsController.kt",
+    "line": 1067,
+    "feature": "agent-conversations",
+    "transport": "json"
+  },
+  {
+    "id": "getConversations",
+    "method": "GET",
+    "path": "/conversations",
+    "source": "AbstractAgentsController.kt",
+    "line": 1103,
+    "feature": "agent-conversations",
+    "transport": "json"
+  },
+  {
+    "id": "getConversationSummary",
+    "method": "GET",
+    "path": "/conversations/{conversationId}",
+    "source": "AbstractAgentsController.kt",
+    "line": 1113,
+    "feature": "agent-conversations",
+    "transport": "json"
+  },
+  {
+    "id": "getConversationGroups",
+    "method": "GET",
+    "path": "/conversation-groups",
+    "source": "AbstractAgentsController.kt",
+    "line": 1137,
+    "feature": "agent-conversations",
+    "transport": "json"
+  },
+  {
+    "id": "createConversationGroup",
+    "method": "POST",
+    "path": "/conversation-groups",
+    "source": "AbstractAgentsController.kt",
+    "line": 1142,
+    "feature": "agent-conversations",
+    "transport": "json"
+  },
+  {
+    "id": "renameConversationGroup",
+    "method": "PATCH",
+    "path": "/conversation-groups/{groupId}",
+    "source": "AbstractAgentsController.kt",
+    "line": 1152,
+    "feature": "agent-conversations",
+    "transport": "json"
+  },
+  {
+    "id": "deleteConversationGroup",
+    "method": "DELETE",
+    "path": "/conversation-groups/{groupId}",
+    "source": "AbstractAgentsController.kt",
+    "line": 1164,
+    "feature": "agent-conversations",
+    "transport": "json"
+  },
+  {
+    "id": "moveConversationToGroup",
+    "method": "PATCH",
+    "path": "/conversations/{conversationId}/group",
+    "source": "AbstractAgentsController.kt",
+    "line": 1174,
+    "feature": "agent-conversations",
+    "transport": "json"
+  },
+  {
+    "id": "getActiveConversations",
+    "method": "GET",
+    "path": "/conversations/active",
+    "source": "AbstractAgentsController.kt",
+    "line": 1193,
+    "feature": "agent-conversations",
+    "transport": "json"
+  },
+  {
+    "id": "getUnreadConversations",
+    "method": "GET",
+    "path": "/conversations/unread",
+    "source": "AbstractAgentsController.kt",
+    "line": 1200,
+    "feature": "agent-conversations",
+    "transport": "json"
+  },
+  {
+    "id": "getConversationActivities",
+    "method": "POST",
+    "path": "/conversations/activity/query",
+    "source": "AbstractAgentsController.kt",
+    "line": 1207,
+    "feature": "agent-conversations",
+    "transport": "json"
+  },
+  {
+    "id": "markConversationRead",
+    "method": "PUT",
+    "path": "/conversations/{conversationId}/read-receipt",
+    "source": "AbstractAgentsController.kt",
+    "line": 1218,
+    "feature": "agent-conversations",
+    "transport": "json"
+  },
+  {
+    "id": "getConversationStats",
+    "method": "GET",
+    "path": "/conversations/stats",
+    "source": "AbstractAgentsController.kt",
+    "line": 1244,
+    "feature": "agent-conversations",
+    "transport": "json"
+  },
+  {
+    "id": "getConversationTitle",
+    "method": "GET",
+    "path": "/conversations/{conversationId}/title",
+    "source": "AbstractAgentsController.kt",
+    "line": 1265,
+    "feature": "agent-conversations",
+    "transport": "json"
+  },
+  {
+    "id": "updateConversationTitle",
+    "method": "PATCH",
+    "path": "/conversations/{conversationId}/title",
+    "source": "AbstractAgentsController.kt",
+    "line": 1277,
+    "feature": "agent-conversations",
+    "transport": "json"
+  },
+  {
+    "id": "updateConversationStatus",
+    "method": "PATCH",
+    "path": "/conversations/{conversationId}/status",
+    "source": "AbstractAgentsController.kt",
+    "line": 1291,
+    "feature": "agent-conversations",
+    "transport": "json"
+  },
+  {
+    "id": "deleteConversation",
+    "method": "DELETE",
+    "path": "/conversations/{conversationId}",
+    "source": "AbstractAgentsController.kt",
+    "line": 1304,
+    "feature": "agent-conversations",
+    "transport": "json"
+  },
+  {
+    "id": "getSqlQueryResult",
+    "method": "GET",
+    "path": "/conversations/{conversationId}/sql-query-results/{resultId}",
+    "source": "AbstractAgentsController.kt",
+    "line": 1324,
+    "feature": "agent-sql",
+    "transport": "json"
+  },
+  {
+    "id": "getSqlQueryChartData",
+    "method": "GET",
+    "path": "/conversations/{conversationId}/sql-query-results/{resultId}/chart-data",
+    "source": "AbstractAgentsController.kt",
+    "line": 1338,
+    "feature": "agent-sql",
+    "transport": "json"
+  },
+  {
+    "id": "exportSqlQueryResult",
+    "method": "GET",
+    "path": "/conversations/{conversationId}/sql-query-results/{resultId}/export",
+    "source": "AbstractAgentsController.kt",
+    "line": 1350,
+    "feature": "agent-sql",
+    "transport": "download"
+  },
+  {
+    "id": "getConversationMessages",
+    "method": "GET",
+    "path": "/conversations/{conversationId}/messages",
+    "source": "AbstractAgentsController.kt",
+    "line": 1366,
+    "feature": "agent-conversations",
+    "transport": "json"
+  },
+  {
+    "id": "syncConversationMessages",
+    "method": "GET",
+    "path": "/conversations/{conversationId}/messages/sync",
+    "source": "AbstractAgentsController.kt",
+    "line": 1378,
+    "feature": "agent-conversations",
+    "transport": "json"
+  },
+  {
+    "id": "getConversationMessage",
+    "method": "GET",
+    "path": "/conversations/{conversationId}/messages/{messageId}",
+    "source": "AbstractAgentsController.kt",
+    "line": 1400,
+    "feature": "agent-conversations",
+    "transport": "json"
+  },
+  {
+    "id": "getConversationAsyncTasks",
+    "method": "GET",
+    "path": "/conversations/{conversationId}/async-tasks",
+    "source": "AbstractAgentsController.kt",
+    "line": 1412,
+    "feature": "agent-async-tasks",
+    "transport": "json"
+  },
+  {
+    "id": "syncConversationAsyncTasks",
+    "method": "GET",
+    "path": "/conversations/{conversationId}/async-tasks/sync",
+    "source": "AbstractAgentsController.kt",
+    "line": 1424,
+    "feature": "agent-async-tasks",
+    "transport": "json"
+  },
+  {
+    "id": "getConversationAsyncTask",
+    "method": "GET",
+    "path": "/conversations/{conversationId}/async-tasks/{asyncTaskId}",
+    "source": "AbstractAgentsController.kt",
+    "line": 1436,
+    "feature": "agent-async-tasks",
+    "transport": "json"
+  },
+  {
+    "id": "getConversationSubagents",
+    "method": "GET",
+    "path": "/conversations/{conversationId}/subagents",
+    "source": "AbstractAgentsController.kt",
+    "line": 1448,
+    "feature": "agent-subagents",
+    "transport": "json"
+  },
+  {
+    "id": "syncConversationSubagents",
+    "method": "GET",
+    "path": "/conversations/{conversationId}/subagents/sync",
+    "source": "AbstractAgentsController.kt",
+    "line": 1460,
+    "feature": "agent-subagents",
+    "transport": "json"
+  },
+  {
+    "id": "getConversationSubagent",
+    "method": "GET",
+    "path": "/conversations/{conversationId}/subagents/{subagentTaskId}",
+    "source": "AbstractAgentsController.kt",
+    "line": 1472,
+    "feature": "agent-subagents",
+    "transport": "json"
+  },
+  {
+    "id": "getConversationSubagentResult",
+    "method": "GET",
+    "path": "/conversations/{conversationId}/subagents/{subagentTaskId}/result",
+    "source": "AbstractAgentsController.kt",
+    "line": 1484,
+    "feature": "agent-subagents",
+    "transport": "json"
+  },
+  {
+    "id": "cancelConversationSubagent",
+    "method": "DELETE",
+    "path": "/conversations/{conversationId}/subagents/{subagentTaskId}",
+    "source": "AbstractAgentsController.kt",
+    "line": 1496,
+    "feature": "agent-subagents",
+    "transport": "json"
+  },
+  {
+    "id": "cancelQueuedMessage",
+    "method": "DELETE",
+    "path": "/conversations/{conversationId}/messages/{messageId}/queue",
+    "source": "AbstractAgentsController.kt",
+    "line": 1508,
+    "feature": "agent-conversations",
+    "transport": "json"
+  },
+  {
+    "id": "getChatEvents",
+    "method": "GET",
+    "path": "/events",
+    "source": "AbstractAgentsController.kt",
+    "line": 1520,
+    "feature": "agent-session",
+    "transport": "json"
+  },
+  {
+    "id": "getChatEventsBatch",
+    "method": "POST",
+    "path": "/events/batch",
+    "source": "AbstractAgentsController.kt",
+    "line": 1532,
+    "feature": "agent-session",
+    "transport": "json"
+  },
+  {
+    "id": "approvePlan",
+    "method": "POST",
+    "path": "/plan/approve",
+    "source": "AbstractAgentsController.kt",
+    "line": 1547,
+    "feature": "agent-interactions",
+    "transport": "json"
+  },
+  {
+    "id": "getPlanStatus",
+    "method": "GET",
+    "path": "/plan/{planId}/status",
+    "source": "AbstractAgentsController.kt",
+    "line": 1569,
+    "feature": "agent-interactions",
+    "transport": "json"
+  },
+  {
+    "id": "getMessagePlanStatus",
+    "method": "GET",
+    "path": "/conversations/{conversationId}/messages/{messageId}/plan/status",
+    "source": "AbstractAgentsController.kt",
+    "line": 1587,
+    "feature": "agent-interactions",
+    "transport": "json"
+  },
+  {
+    "id": "getUserInputStatus",
+    "method": "GET",
+    "path": "/user-input/{questionId}/status",
+    "source": "AbstractAgentsController.kt",
+    "line": 1602,
+    "feature": "agent-interactions",
+    "transport": "json"
+  },
+  {
+    "id": "submitUserInputAnswer",
+    "method": "POST",
+    "path": "/user-input/answer",
+    "source": "AbstractAgentsController.kt",
+    "line": 1628,
+    "feature": "agent-interactions",
+    "transport": "json"
+  },
+  {
+    "id": "generatePreSignedWriteUrl",
+    "method": "POST",
+    "path": "/files/pre-signed-url/write",
+    "source": "AbstractAgentsController.kt",
+    "line": 1695,
+    "feature": "agent-files",
+    "transport": "json"
+  },
+  {
+    "id": "confirmPreSignedUrlUpload",
+    "method": "POST",
+    "path": "/files/pre-signed-url/confirm",
+    "source": "AbstractAgentsController.kt",
+    "line": 1720,
+    "feature": "agent-files",
+    "transport": "json"
+  },
+  {
+    "id": "createFile",
+    "method": "POST",
+    "path": "/files/contentMd5",
+    "source": "AbstractAgentsController.kt",
+    "line": 1734,
+    "feature": "agent-files",
+    "transport": "json"
+  },
+  {
+    "id": "existsMetaByContentMd5",
+    "method": "GET",
+    "path": "/files/meta/contentMd5",
+    "source": "AbstractAgentsController.kt",
+    "line": 1748,
+    "feature": "agent-files",
+    "transport": "json"
+  },
+  {
+    "id": "generatePreSignedReadUrlSimple",
+    "method": "GET",
+    "path": "/conversations/{conversationId}/files/{fileId}/preview",
+    "source": "AbstractAgentsController.kt",
+    "line": 1759,
+    "feature": "agent-files",
+    "transport": "json"
+  },
+  {
+    "id": "generatePlanIntermediateFilePreviewUrl",
+    "method": "GET",
+    "path": "/conversations/{conversationId}/messages/{messageId}/plan-intermediate-files/{fileId}/preview",
+    "source": "AbstractAgentsController.kt",
+    "line": 1771,
+    "feature": "agent-interactions",
+    "transport": "json"
+  },
+  {
+    "id": "batchGetCitationMetadata",
+    "method": "POST",
+    "path": "/knowledge-bases/citations/metadata",
+    "source": "AbstractAgentsController.kt",
+    "line": 1789,
+    "feature": "agent-citations",
+    "transport": "json"
+  },
+  {
+    "id": "getCitationMetadata",
+    "method": "GET",
+    "path": "/knowledge-bases/citations/{citationType}/{referenceId}/metadata",
+    "source": "AbstractAgentsController.kt",
+    "line": 1800,
+    "feature": "agent-citations",
+    "transport": "json"
+  },
+  {
+    "id": "listWorkspaceFiles",
+    "method": "GET",
+    "path": "/conversations/{conversationId}/workspace/files",
+    "source": "AbstractAgentsController.kt",
+    "line": 1810,
+    "feature": "agent-workspace",
+    "transport": "json"
+  },
+  {
+    "id": "generateWorkspaceFilePreviewUrl",
+    "method": "GET",
+    "path": "/conversations/{conversationId}/workspace/files/preview",
+    "source": "AbstractAgentsController.kt",
+    "line": 1822,
+    "feature": "agent-workspace",
+    "transport": "json"
+  },
+  {
+    "id": "getChatStreamBySseConversation",
+    "method": "POST",
+    "path": "/conversations/{conversationId}/stream",
+    "source": "AbstractAgentsStreamController.kt",
+    "line": 121,
+    "feature": "agent-session",
+    "transport": "sse"
+  },
+  {
+    "id": "getChatStreamByWsConversation",
+    "method": "WS",
+    "path": "/conversations/{conversationId}/stream/ws",
+    "source": "AbstractAgentsStreamController.kt",
+    "line": 138,
+    "feature": "agent-session",
+    "transport": "ws"
+  },
+  {
+    "id": "streamProbe",
+    "method": "POST",
+    "path": "/stream-probe",
+    "source": "AbstractAgentsStreamController.kt",
+    "line": 186,
+    "feature": "agent-session",
+    "transport": "sse"
+  }
+]

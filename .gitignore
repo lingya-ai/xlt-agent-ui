@@ -1,0 +1,45 @@
+# 依赖与本地缓存（含 SDK 压缩包、浏览器和安装验证宿主）
+node_modules/
+.pnpm-store/
+.cache/
+
+# Next.js、Vite 与 TypeScript 构建产物
+.next/
+out/
+dist/
+next-env.d.ts
+*.tsbuildinfo
+
+# 测试报告、覆盖率与浏览器验证产物
+coverage/
+playwright-report/
+test-results/
+blob-report/
+artifacts/
+
+# 本地环境配置；允许提交不含凭据的配置示例
+.env*
+!.env.example
+!.env.*.example
+
+# Registry 构建及 shadcn 安装生成的文件
+apps/*/src/installed/
+apps/docs/app/installed/
+apps/docs/public/r/
+
+# 运行日志
+*.log
+
+# Python 辅助脚本缓存
+__pycache__/
+*.py[cod]
+.venv/
+
+# 编辑器临时文件与操作系统元数据
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+Thumbs.db
+Desktop.ini
