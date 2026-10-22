@@ -1,12 +1,14 @@
 # XLT Agent UI
 
+[在线文档](https://lingya-ai.github.io/xlt-agent-ui/) · [组件目录](https://lingya-ai.github.io/xlt-agent-ui/components/) · [交互演示](https://lingya-ai.github.io/xlt-agent-ui/examples/)
+
 ## 一句话生成 Agent 项目
 
 > 请按照 https://github.com/lingya-ai/xlt-agent-ui/blob/HEAD/docs/create-agent-project-prompt.md 中的提示词，在我指定的目录使用本项目 Registry 和官方 SDK 创建 Next.js 对话项目，接入我提供的 OpenAPI 参数并完成真实对话验证。
 
 面向小灵通 OpenAPI 渠道的独立 React 组件源码 Registry。采用 shadcn CLI 分发，安装后源码归接入项目维护。
 
-当前版本 `0.2.0` 是本地候选版本，未执行远程部署或公开发布。本项目采用 [MIT 许可证](./LICENSE)；真实渠道联调需要测试地址与凭据，模拟演示不代表真实验收。
+文档站通过 GitHub Pages 部署，地址为 https://lingya-ai.github.io/xlt-agent-ui/。当前 Registry 版本为 `0.2.0`。本项目采用 [MIT 许可证](./LICENSE)；真实渠道联调需要测试地址与凭据，模拟演示不代表真实验收。
 
 ## 本地运行
 
