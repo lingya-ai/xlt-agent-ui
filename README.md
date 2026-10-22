@@ -4,7 +4,9 @@
 
 ## 一句话生成 Agent 项目
 
-> 请按照 https://github.com/lingya-ai/xlt-agent-ui/blob/HEAD/docs/create-agent-project-prompt.md 中的提示词，在我指定的目录使用本项目 Registry 和官方 SDK 创建 Next.js 对话项目，接入我提供的 OpenAPI 参数并完成真实对话验证。
+将下面这句话复制给你的 AI 编程助手（如 Codex、Cursor 或 Claude Code）。助手会读取接入指南，确认项目目录与连接参数后创建项目；无需先克隆本仓库。
+
+> 请读取 https://raw.githubusercontent.com/lingya-ai/xlt-agent-ui/main/docs/create-agent-project-prompt.md ，将其中的执行提示词作为我交给你的任务：使用 XLT Agent UI 的公开 Registry 和官方 SDK，在我的工作区创建独立的 Next.js Agent 对话项目；先检查已有上下文并集中向我确认缺少的必要参数，密钥只从本地服务端环境变量读取，然后直接实施并完成真实对话验证。
 
 面向小灵通 OpenAPI 渠道的独立 React 组件源码 Registry。采用 shadcn CLI 分发，安装后源码归接入项目维护。
 

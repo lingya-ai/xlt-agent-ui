@@ -1,0 +1,8 @@
+#[mcp_servers.webstorm]
+#url = "http://127.0.0.1:64600/stream"
+[mcp_servers.chrome-devtools]
+command = "npm"
+args = ["exec", "--yes", "--", "chrome-devtools-mcp@latest", "--autoConnect"]
+
+[mcp_servers.firecrawl]
+url = "https://mcp.firecrawl.dev/v2/mcp-oauth"
