@@ -1,8 +1,8 @@
 {
   "package": "@lingya-ai/agents-sdk",
-  "version": "0.7.1",
-  "contract": "0.1.7",
-  "localTarballSha256": "4e53b28e541e5756deac1ef4aa2c21e60294fb61a5ec2445312eeb4fe34581f0",
+  "version": "1.0.0",
+  "contract": "1.0.0",
+  "localTarballSha256": "f7fe3f9855dc585c08a59d62b801155c0c6b620853c1bb5e59ba77a959c68817",
   "operations": [
     {
       "operationId": "getAgentsConfig",

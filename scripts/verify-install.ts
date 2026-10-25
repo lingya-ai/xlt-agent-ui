@@ -10,8 +10,8 @@ const run = (args: string[], cwd: string) => new Promise<void>((resolve, reject)
 });
 const write = async (directory: string, file: string, value: string) => {const destination = path.join(directory, file); await mkdir(path.dirname(destination),{recursive:true}); await writeFile(destination,value);};
 await mkdir("artifacts", {recursive:true});
-// SDK 0.7.1 已发布；仍用本地 tarball fixture 保证安装验证可重复。
-const sdkBytes = await readFile(path.join(root, ".cache/sdk/lingya-ai-agents-sdk-0.7.1.tgz"));
+// SDK 1.0.0 已发布；仍用本地 tarball fixture 保证安装验证可重复。
+const sdkBytes = await readFile(path.join(root, ".cache/sdk/lingya-ai-agents-sdk-1.0.0.tgz"));
 const sdkProvenance = JSON.parse(await readFile("provenance/sdk.json", "utf8")) as {version:string;localTarballSha256:string};
 if (createHash("sha256").update(sdkBytes).digest("hex") !== sdkProvenance.localTarballSha256) throw new Error("SDK 包摘要与来源记录不一致");
 const sdkPackage = JSON.parse(await readFile(path.join(root, "node_modules/@lingya-ai/agents-sdk/package.json"), "utf8"));
@@ -29,10 +29,10 @@ const sdkAddress = sdkRegistry.address();
 if (!sdkAddress || typeof sdkAddress === "string") throw new Error("本地 SDK Registry 未启动");
 try {
 for (const framework of ["vite", "next"] as const) {
-  const directory = path.join(root, ".cache/consumers/0.2.0", framework);
+  const directory = path.join(root, ".cache/consumers/0.2.1", framework);
   const alias = framework === "vite" ? "~" : "@";
   const manifest = {name:`xlt-install-${framework}`,private:true,type:"module",packageManager:"pnpm@10.30.2",
-    dependencies:{react:"19.2.0","react-dom":"19.2.0","@lingya-ai/agents-sdk":"0.7.1",...(framework === "next" ? {next:"16.1.6"}: {})},
+    dependencies:{react:"19.2.0","react-dom":"19.2.0","@lingya-ai/agents-sdk":"1.0.0",...(framework === "next" ? {next:"16.1.6"}: {})},
     devDependencies:{typescript:"5.9.3","@types/react":"19.2.0","@types/react-dom":"19.2.0","@types/node":"22.19.0",tailwindcss:"4.1.11","@tailwindcss/postcss":"4.1.11",...(framework === "vite" ? {vite:"6.4.1"}: {})}};
   await write(directory,"package.json",JSON.stringify(manifest,null,2));
   await write(directory,"pnpm-workspace.yaml","packages: []\n");
@@ -42,7 +42,7 @@ for (const framework of ["vite", "next"] as const) {
   await write(directory,"src/styles.css",'@import "tailwindcss";\n');
   await write(directory,"src/lib/utils.ts",'import {clsx, type ClassValue} from "clsx"; import {twMerge} from "tailwind-merge"; export function cn(...values: ClassValue[]) {return twMerge(clsx(values));}\n');
   await run(["install"],directory);
-  await run(["exec","shadcn","add","http://localhost:4602/r/0.2.0/agent-demo.json","http://localhost:4602/r/0.2.0/agent-client.json","http://localhost:4602/r/0.2.0/agent-server.json","http://localhost:4602/r/0.2.0/agent-goal-demo.json","--yes","--overwrite"],directory);
+  await run(["exec","shadcn","add","http://localhost:4602/r/0.2.1/agent-demo.json","http://localhost:4602/r/0.2.1/agent-client.json","http://localhost:4602/r/0.2.1/agent-server.json","http://localhost:4602/r/0.2.1/agent-goal-demo.json","--yes","--overwrite"],directory);
   const installed = "src/shared/components/xlt-agent";
   const css = (await readFile("apps/docs/app/globals.css","utf8"))
     .replace('"../../../packages/registry/src/styles/agent.css"','"./shared/components/xlt-agent/styles/agent.css"')
@@ -60,7 +60,7 @@ for (const framework of ["vite", "next"] as const) {
   }
   await run(["exec","tsc","--noEmit"],directory);
   await run(["exec",framework,"build"],directory);
-  await writeFile(`artifacts/install-${framework}.json`,JSON.stringify({framework,alias,directory,installed,typecheck:"passed",build:"passed",registryVersion:"0.2.0",sdkVersion:sdkPackage.version,sdkSource:"local-tarball"},null,2));
+  await writeFile(`artifacts/install-${framework}.json`,JSON.stringify({framework,alias,directory,installed,typecheck:"passed",build:"passed",registryVersion:"0.2.1",sdkVersion:sdkPackage.version,sdkSource:"local-tarball"},null,2));
 }
 
 } finally { await new Promise<void>((resolve,reject) => sdkRegistry.close(error => error ? reject(error) : resolve())); }

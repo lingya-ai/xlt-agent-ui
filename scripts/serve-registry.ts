@@ -10,4 +10,4 @@ const server = createServer(async (request, response) => {
   try { response.setHeader("Content-Type", "application/json; charset=utf-8"); response.end(await readFile(file)); }
   catch { response.writeHead(404).end(); }
 });
-server.listen(port, "127.0.0.1", () => console.log(`Registry http://localhost:${port}/r/0.2.0/registry.json`));
+server.listen(port, "127.0.0.1", () => console.log(`Registry http://localhost:${port}/r/0.2.1/registry.json`));

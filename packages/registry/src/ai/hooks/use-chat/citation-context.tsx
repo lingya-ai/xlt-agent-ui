@@ -21,7 +21,7 @@ export type CitationKey = `${Lowercase<KnowledgeCitationType>}:${number}`;
  */
 export function citationKeyToReference(key: CitationKey): KnowledgeCitation {
   const [type, referenceId] = key.split(':');
-  return {type: type!.toUpperCase(), referenceId: Number(referenceId)};
+  return {citationType: type!.toUpperCase(), referenceId: Number(referenceId)};
 }
 
 /** 引用元数据（从后端获取的 title / description） */

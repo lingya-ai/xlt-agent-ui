@@ -169,6 +169,7 @@ function createWorkspaceResponse(
           ? [
               {
                 relativePath: "reports/result.pdf",
+                fileId: 1,
                 size: 1024,
                 fileName: "result.pdf",
                 mimeType: "application/pdf",

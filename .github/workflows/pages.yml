@@ -31,9 +31,8 @@ jobs:
       - name: Read Pages configuration
         id: pages
         uses: actions/configure-pages@983d7736d9b0ae728b81ab479565c72886d7745b # v5
-      - name: Resolve SDK latest from npm
-        run: node scripts/prepare-ci-sdk.mjs
-      - run: pnpm install --no-frozen-lockfile --registry=https://registry.npmjs.org/
+      - name: Install locked dependencies
+        run: pnpm install --frozen-lockfile --registry=https://registry.npmjs.org/
       - name: Report installed SDK
         run: pnpm list @lingya-ai/agents-sdk --depth 0 -r
       - name: Build public registry

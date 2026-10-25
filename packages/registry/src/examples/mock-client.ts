@@ -74,7 +74,7 @@ export function createDemoClient() {
       latestTerminalTime: time, hasUnreadCompletion: false, requiresUserConfirmation: false}]};
     else if (route === "/conversation-groups") result = {records: []};
     else if (route.endsWith("/config")) result = {lastChatModelSpec: null, planMode: false};
-    else if (route.endsWith("/workspace/files")) result = {fileArtifacts: page([{relativePath: "guide.md", size: 128, fileName: "guide.md", mimeType: "text/markdown", lastUpdateTime: time}]), nonFileArtifacts: []};
+    else if (route.endsWith("/workspace/files")) result = {fileArtifacts: page([{fileId: 1, relativePath: "guide.md", size: 128, fileName: "guide.md", mimeType: "text/markdown", lastUpdateTime: time}]), nonFileArtifacts: []};
     else if (route.endsWith("/preview")) result = {url: "data:text/markdown;charset=utf-8," + encodeURIComponent("# OpenAPI Agent UI\n\n这是工作区文件预览示例。\n\n安装源码后，可按需调整文件预览与下载交互。")};
     else if (route.endsWith("/async-tasks/sync")) result = {activeTasks: [], notificationMessages: [], nextMessageId: null, hasMore: false, pollingRequired: false};
     else if (route.endsWith("/subagents/sync")) result = {activeTasks: [], changedTasks: [], nextCursor: null, pollingRequired: false, hasUnreadTerminalResults: false};

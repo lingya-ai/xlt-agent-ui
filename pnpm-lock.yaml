@@ -5,7 +5,7 @@ settings:
   excludeLinksFromLockfile: false
 
 overrides:
-  '@lingya-ai/agents-sdk': file:.cache/sdk/lingya-ai-agents-sdk-0.7.1.tgz
+  '@lingya-ai/agents-sdk': 1.0.0
 
 importers:
 
@@ -21,8 +21,8 @@ importers:
         specifier: ^5.2.2
         version: 5.9.2(ajv-formats@2.1.1(ajv@8.20.0))(ajv@8.20.0)(react-hook-form@7.90.0(@types/react@19.3.0)(react@19.2.0))(zod@3.25.76)
       '@lingya-ai/agents-sdk':
-        specifier: file:.cache/sdk/lingya-ai-agents-sdk-0.7.1.tgz
-        version: file:.cache/sdk/lingya-ai-agents-sdk-0.7.1.tgz
+        specifier: 1.0.0
+        version: 1.0.0
       '@radix-ui/react-alert-dialog':
         specifier: ^1.1.15
         version: 1.2.1(@types/react-dom@19.3.0(@types/react@19.3.0))(@types/react@19.3.0)(react-dom@19.2.0(react@19.2.0))(react@19.2.0)
@@ -281,8 +281,8 @@ importers:
         specifier: ^5.2.2
         version: 5.9.2(ajv-formats@2.1.1(ajv@8.20.0))(ajv@8.20.0)(react-hook-form@7.90.0(@types/react@19.3.0)(react@19.2.0))(zod@3.25.76)
       '@lingya-ai/agents-sdk':
-        specifier: file:../../.cache/sdk/lingya-ai-agents-sdk-0.7.1.tgz
-        version: file:.cache/sdk/lingya-ai-agents-sdk-0.7.1.tgz
+        specifier: 1.0.0
+        version: 1.0.0
       '@radix-ui/react-alert-dialog':
         specifier: ^1.1.15
         version: 1.2.1(@types/react-dom@19.3.0(@types/react@19.3.0))(@types/react@19.3.0)(react-dom@19.2.0(react@19.2.0))(react@19.2.0)
@@ -1320,9 +1320,8 @@ packages:
   '@jridgewell/trace-mapping@0.3.31':
     resolution: {integrity: sha512-zzNR+SdQSDJzc8joaeP8QQoCQr8NuYx2dIIytl1QeBEZHJ9uW6hebsrYgbz8hJwUQao3TWCMtmfV8Nu1twOLAw==, tarball: https://registry.npmmirror.com/@jridgewell/trace-mapping/-/trace-mapping-0.3.31.tgz}
 
-  '@lingya-ai/agents-sdk@file:.cache/sdk/lingya-ai-agents-sdk-0.7.1.tgz':
-    resolution: {integrity: sha512-50E+ENN+gwY4wWg54jrros5+pUnIqwMKvwnCMtPo0PrKdsg4VCs86MJRZcqYXtkHfedU3uMLZ8VkXFKe5DQeww==, tarball: file:.cache/sdk/lingya-ai-agents-sdk-0.7.1.tgz}
-    version: 0.7.0
+  '@lingya-ai/agents-sdk@1.0.0':
+    resolution: {integrity: sha512-szr6icyl2zTOMCk5uCckRTAia5L+u5ec0InB+XPhQp6wCyCnvu0Xcpbsy6YSloOw1qbPHGjFL+iB8FxrcpGV5A==}
     engines: {node: '>=20'}
 
   '@mapbox/node-pre-gyp@1.0.11':
@@ -6709,7 +6708,7 @@ snapshots:
       '@jridgewell/resolve-uri': 3.1.2
       '@jridgewell/sourcemap-codec': 1.6.0
 
-  '@lingya-ai/agents-sdk@file:.cache/sdk/lingya-ai-agents-sdk-0.7.1.tgz':
+  '@lingya-ai/agents-sdk@1.0.0':
     dependencies:
       ws: 8.22.0
     transitivePeerDependencies:

@@ -13,7 +13,7 @@ describe("文档内容和导航", () => {
   it("核心组件与导航地址唯一，安装使用固定版本", () => {
     expect(componentDocs).toHaveLength(6);
     expect(new Set(navigation.map(page => page.href)).size).toBe(navigation.length);
-    expect(registryCommand("agent-chat")).toContain("/r/0.2.0/agent-chat.json");
+    expect(registryCommand("agent-chat")).toContain("/r/0.2.1/agent-chat.json");
     expect(componentDocs.every(page => page.code.includes(`import {${page.symbol}}`))).toBe(true);
   });
   it("支持正文检索、多词匹配及空结果", () => {

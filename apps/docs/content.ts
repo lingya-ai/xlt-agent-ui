@@ -5,7 +5,7 @@ export const sections = [
 本地构建 Registry 后启动服务，再在你的项目目录执行：
 
 \`\`\`sh
-pnpm dlx shadcn@4.22.1 add http://localhost:4602/r/0.2.0/agent-chat.json
+pnpm dlx shadcn@4.22.1 add http://localhost:4602/r/0.2.1/agent-chat.json
 \`\`\`
 
 客户端与类型直接从 @lingya-ai/agents-sdk/browser 导入；Provider 和组件从安装后的源码叶子路径导入。下例的 components 路径由宿主 components.json 决定。
@@ -80,7 +80,7 @@ agent-messages、agent-composer、agent-conversations、agent-interactions、age
 agent-chat 为完整聊天组合；agent-chat-workbench 包含会话目录与工作区；agent-history 提供只读消息与事件回放。agent-demo 为可运行的本地模拟示例；agent-goal-demo 提供独立目标演示。
 
 \`\`\`sh
-pnpm dlx shadcn@4.22.1 add http://localhost:4602/r/0.2.0/agent-chat-workbench.json
+pnpm dlx shadcn@4.22.1 add http://localhost:4602/r/0.2.1/agent-chat-workbench.json
 \`\`\`
 
 条目使用完整依赖闭包，相同文件在多个条目中内容一致，路径统一落在 @components/xlt-agent。CLI 根据宿主 components.json 解析目录与 alias。升级覆盖前请审查本地修改。
@@ -150,7 +150,7 @@ import {AgentLocale} from "@/components/xlt-agent/i18n/runtime";
 移植后的 useAgentMessages 返回可直接渲染的文本节点，并以 .value 读取纯字符串。插值条目保留参数签名；覆盖内容使用 {{parameter}} 占位符。无需安装 Intlayer 或注入私有租户空间 Provider。
 `},
   {slug:"versions",title:"版本与升级",body:`
-当前本地候选版本 0.2.0，使用 SDK 0.7.0 / 契约 0.1.7。SDK 0.7.0 尚未发布 npm，本地验证显式覆盖为 SDK tarball；公开接入前需确认该版本已可安装。后端来源与前端移植来源记录在 provenance/source.json，包含提交和源文件 SHA-256。原仓库已有未提交改动也记录在该文件中；快照同时保留文件哈希，不能只依赖提交号重建。
+当前版本 0.2.1，使用 npm SDK 1.0.0 / 契约 1.0.0。安装无需本地 SDK 压缩包。后端来源与前端移植来源记录在 provenance/source.json，包含提交和源文件 SHA-256。原仓库已有未提交改动也记录在该文件中；快照同时保留文件哈希，不能只依赖提交号重建。
 
 发布地址使用 /r/<version>/<item>.json。发布后不得覆盖同版本内容。构建器校验已有快照，文件变化时要求版本递增；REGISTRY_DEV=1 仅用于尚未发布的本地候选版本重建。
 

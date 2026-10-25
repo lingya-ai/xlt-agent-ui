@@ -35,11 +35,11 @@
 
 面向小灵通 OpenAPI 渠道的独立 React 组件源码 Registry。采用 shadcn CLI 分发，安装后源码归接入项目维护。
 
-文档站通过 GitHub Pages 部署，地址为 https://lingya-ai.github.io/xlt-agent-ui/。当前 Registry 版本为 `0.2.0`。本项目采用 [MIT 许可证](./LICENSE)；真实渠道联调需要测试地址与凭据，模拟演示不代表真实验收。
+文档站通过 GitHub Pages 部署，地址为 https://lingya-ai.github.io/xlt-agent-ui/。当前 Registry 版本为 `0.2.1`。本项目采用 [MIT 许可证](./LICENSE)；真实渠道联调需要测试地址与凭据，模拟演示不代表真实验收。
 
 ## 本地运行
 
-需要 Node.js 22+ 与 pnpm 10.30.2。SDK `0.7.1` 已发布 npm，包含预签名上传所需的 `sizeBytes`、`uploadMethod`、`formFields`、`maximumBytes`；仓库仍按 docs/migration-0.2.0.md 使用本地 tarball 固定该版本。
+需要 Node.js 22+ 与 pnpm 10.30.2。SDK 固定使用 npm `@lingya-ai/agents-sdk@1.0.0`，直接执行 `pnpm install --frozen-lockfile`，无需本地 SDK 压缩包。升级变化见 docs/migration-0.2.1.md。
 
 ```sh
 pnpm install
@@ -53,14 +53,14 @@ pnpm registry:serve
 pnpm dev
 ```
 
-文档站默认 `http://localhost:4600`，Registry 为 `http://localhost:4602/r/0.2.0/registry.json`，Vite 示例通过 `pnpm --filter @xlt/vite-example dev` 在 4601 端口启动。
+文档站默认 `http://localhost:4600`，Registry 为 `http://localhost:4602/r/0.2.1/registry.json`，Vite 示例通过 `pnpm --filter @xlt/vite-example dev` 在 4601 端口启动。
 
 文档入口为 `/docs`，核心组件目录为 `/components`，完整交互演示为 `/examples`。站点支持本地全文搜索（Ctrl/Cmd K）、明暗主题与移动导航；品牌资源复制自小灵通前端，独立构建不依赖兄弟仓库。
 
 在已初始化 shadcn 的 React 19 + Tailwind 4 宿主中安装：
 
 ```sh
-pnpm dlx shadcn@4.22.1 add http://localhost:4602/r/0.2.0/agent-chat.json
+pnpm dlx shadcn@4.22.1 add http://localhost:4602/r/0.2.1/agent-chat.json
 ```
 
 完整组合为 `agent-chat-workbench.json`。协议、会话、消息、输入框、审批、目标、子任务、工作区、预览、引用、SQL 等独立条目见文档站安装页。条目使用完整源码依赖闭包，基础 UI 通过固定版本的 Registry 依赖引入。
@@ -81,7 +81,7 @@ pnpm dlx shadcn@4.22.1 add http://localhost:4602/r/0.2.0/agent-chat.json
 - `scripts`：归集、路径转换、契约检查、源码安装及浏览器验证
 - `provenance`：前后端来源提交、文件哈希、接口快照、依赖许可证
 - `docs/contracts.md`：64 个 HTTP 操作与 WebSocket 的覆盖表
-- `docs/migration-0.2.0.md`：SDK 迁移调整与升级边界
+- `docs/migration-0.2.1.md`：SDK 1.0.0 兼容修复与升级边界
 - `docs/verification.md`：本地验收结果、证据路径与待完成项
 - `artifacts`：本地验证报告与截图，不进入源码分发
 

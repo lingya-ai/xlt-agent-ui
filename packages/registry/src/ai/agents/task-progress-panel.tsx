@@ -87,7 +87,7 @@ function TaskRow({
         #{task.id}
       </Badge>
       <span className="min-w-0 flex-1 truncate">
-        {task.subject}
+        {task.content}
       </span>
     </div>
   )

@@ -1,6 +1,6 @@
 import {sections} from "../content";
 
-export const version = "0.2.0";
+export const version = "0.2.1";
 export function registryCommand(item: string) {
   const origin = (process.env.REGISTRY_ORIGIN ?? "http://localhost:4602").replace(/\/$/, "");
   return `pnpm dlx shadcn@4.22.1 add ${origin}/r/${version}/${item}.json`;

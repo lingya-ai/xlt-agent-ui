@@ -65,13 +65,13 @@ it('工作区按 SDK 路径查询预览，列表日期保持 SDK Date',async()=>
  const network=vi.fn<typeof fetch>(async(input)=>{
   const url=new URL(input instanceof Request?input.url:String(input));
   if(url.pathname.endsWith('/preview'))return json({url:'https://storage.test/read'});
-  return json({fileArtifacts:{records:[{relativePath:'reports/中文.pdf',size:42,fileName:'中文.pdf',mimeType:'application/pdf',lastUpdateTime:'2026-10-21T00:00:00Z'}],page:{current:0,size:20,total:1,totalPages:1}},nonFileArtifacts:[]});
+  return json({fileArtifacts:{records:[{fileId:42,relativePath:'reports/中文.pdf',size:42,fileName:'中文.pdf',mimeType:'application/pdf',lastUpdateTime:'2026-10-21T00:00:00Z'}],page:{current:0,size:20,total:1,totalPages:1}},nonFileArtifacts:[]});
  });
  const client=clientWith(network);
  const {result}=renderHook(()=>({list:useWorkspaceFiles({httpClient:client}),preview:useWorkspaceFilePreviewUrlCallback({httpClient:client})}));
  const list=await result.current.list('conversation',{current:0,size:20});
  expect(list.fileArtifacts.records[0]?.lastUpdateTime).toBeInstanceOf(Date);
- expect(list.fileArtifacts.records[0]).not.toHaveProperty('fileId');
+ expect(list.fileArtifacts.records[0]).toHaveProperty('fileId',42);
  expect(await result.current.preview('conversation','reports/中文.pdf')).toEqual({url:'https://storage.test/read'});
  const request=network.mock.calls[1]?.[0];
  if(!(request instanceof Request))throw new Error('SDK 应使用 Request');

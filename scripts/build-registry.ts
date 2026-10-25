@@ -110,7 +110,7 @@ for (const [name, entry] of Object.entries(entries)) {
     $schema: "https://ui.shadcn.com/schema/registry-item.json", name, type: "registry:block", title: name,
     description: entry.description, dependencies: [...dependencies].sort(), registryDependencies: [...registryDependencies].sort(),
     files: [...files.sort((a, b) => a.path.localeCompare(b.path)), ...notices],
-    meta: { version, contract: "openapi/v1", contractVersion: "0.1.7", sdk: "@lingya-ai/agents-sdk", sdkVersion: "0.7.1", source: "provenance/source.json", sdkSource: "provenance/sdk.json" },
+    meta: { version, contract: "openapi/v1", contractVersion: "1.0.0", sdk: "@lingya-ai/agents-sdk", sdkVersion: "1.0.0", source: "provenance/source.json", sdkSource: "provenance/sdk.json" },
     docs: "安装后导入 AgentProvider 和所需组件；请参阅文档的令牌接入、主题与升级说明。CSS 入口需要由宿主按文档配置。",
   });
   const serialized = JSON.stringify(item, null, 2) + "\n";

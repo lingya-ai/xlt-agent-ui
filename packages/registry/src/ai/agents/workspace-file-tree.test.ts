@@ -7,6 +7,7 @@ describe("buildWorkspaceFileTree", () => {
     const tree = buildWorkspaceFileTree([
       {
         relativePath: "README.md",
+        fileId: 1,
         size: 12,
         fileName: "README.md",
         mimeType: "text/markdown",
@@ -14,6 +15,7 @@ describe("buildWorkspaceFileTree", () => {
       },
       {
         relativePath: "attachments/report.pdf",
+        fileId: 2,
         size: 128,
         fileName: "report.pdf",
         mimeType: "application/pdf",
@@ -21,6 +23,7 @@ describe("buildWorkspaceFileTree", () => {
       },
       {
         relativePath: "attachments/images/logo.png",
+        fileId: 3,
         size: 64,
         fileName: "logo.png",
         mimeType: "image/png",
@@ -62,6 +65,7 @@ describe("buildWorkspaceFileTree", () => {
     const tree = buildWorkspaceFileTree([
       {
         relativePath: "exports\\2026\\summary.xlsx",
+        fileId: 4,
         size: 256,
         fileName: "summary.xlsx",
         mimeType:
