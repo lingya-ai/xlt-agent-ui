@@ -77,7 +77,7 @@
     "pdfjs-dist": "^3.11.174",
     "viewerjs": "^1.11.7",
     "echarts": "6.1.0",
-    "@lingya-ai/agents-sdk": "0.7.0"
+    "@lingya-ai/agents-sdk": "0.7.1"
   },
   "devDependencies": {
     "@types/node": "^22.0.0",
@@ -101,7 +101,7 @@
   },
   "pnpm": {
     "overrides": {
-      "@lingya-ai/agents-sdk": "file:.cache/sdk/lingya-ai-agents-sdk-0.7.0.tgz"
+      "@lingya-ai/agents-sdk": "file:.cache/sdk/lingya-ai-agents-sdk-0.7.1.tgz"
     }
   }
 }

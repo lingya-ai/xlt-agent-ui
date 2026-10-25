@@ -1,6 +1,6 @@
 # OpenAPI 契约覆盖表
 
-SDK 0.7.0，契约 0.1.7。64 个 HTTP 操作及 1 个 WebSocket 入口与后端快照逐项关联。SDK 是类型、请求、认证和流解析的标准实现；UI 不再维护响应 Schema 或路由请求转换层。来源见 provenance/source.json 与 provenance/sdk.json。
+SDK 0.7.1，契约 0.1.7。64 个 HTTP 操作及 1 个 WebSocket 入口与后端快照逐项关联。SDK 是类型、请求、认证和流解析的标准实现；UI 不再维护响应 Schema 或路由请求转换层。来源见 provenance/source.json 与 provenance/sdk.json。
 
 | 后端操作 | 相对 /chat 路由 | 后端来源 | SDK Schema | SDK 客户端 | 组件条目 |
 |---|---|---|---|---|---|

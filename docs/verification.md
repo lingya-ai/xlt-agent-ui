@@ -2,6 +2,8 @@
 
 验收日期：2026-10-21。版本：0.2.0 本地候选；未远程部署或发布。SDK 为 @lingya-ai/agents-sdk 0.7.0，契约为 0.1.7。
 
+2026-10-23 更新：本页记录的是 0.7.0 首次验收。SDK 0.7.1 已发布 npm，补齐预签名上传的 `sizeBytes`、`uploadMethod`、`formFields`、`maximumBytes`；xlt-agent-ui 已切换到 0.7.1，Node 22 下 638 项测试与 Vite/Next 安装验证均通过。先前的本地 pnpm patch 已移除，0.7.1 为正式实现。
+
 ## SDK 迁移
 
 UI 直接使用 SDK 客户端、协议类型、ApiError 和 chat.subscribeChatEvents。Provider 保留传入的客户端实例；没有新增 HTTP、DTO、错误或流协议转换层。原自建 HTTP/SSE/WebSocket、路由调用分发、响应 Schema 和签名实现已删除。UI 仅保留请求状态、缓存、重连、历史恢复、消息归并、交互与渲染；服务端令牌示例直接调用 Node SDK。
@@ -27,7 +29,7 @@ SDK 自身 npm run check 通过：23 项测试通过、1 项真实联调跳过�
 
 ## 包来源与已知 SDK 问题
 
-npm 尚无 SDK 0.7.0。项目使用本地 tarball override；独立安装脚本创建隔离的本地 npm fixture，仅提供该 SDK tarball，其他依赖照常安装。Registry 依赖仍为标准 @lingya-ai/agents-sdk@0.7.0，没有写入本机路径。此验收不证明 SDK 已可从公共 npm 安装；来源摘要见 provenance/sdk.json。
+2026-10-21 时 npm 尚无 SDK 0.7.0，项目使用本地 tarball override；独立安装脚本创建隔离的本地 npm fixture，仅提供该 SDK tarball，其他依赖照常安装。Registry 依赖仍为标准 @lingya-ai/agents-sdk@0.7.0，没有写入本机路径。2026-10-23 起 npm 已发布 0.7.1，包含上传预签名字段；本项目已切到 0.7.1，来源摘要见 provenance/sdk.json。
 
 仍复现三个 SDK 解码一致性问题：等待用户输入事件的 serverNow 声明 Date、订阅实际给出字符串；InstantChartColumn.values 没有将时间字符串转为 Date；事件内未知工具扩展未形成独立解码器约定的 rawJson 回退。修复应进入 SDK 的契约生成源，UI 没有增加协议转换层；日期显示容错仅用于格式化。
 

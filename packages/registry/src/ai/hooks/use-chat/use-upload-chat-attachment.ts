@@ -44,7 +44,7 @@ export function useUploadChatAttachment(httpClient: AgentsClient, requireAccess?
 
     // 预签名上传
     requireAccess?.();
-    const preSignedOutput = await httpClient.files.createPreSignedUpload({fileName: file.name, module: 'ai-chat-attachments', contentMd5}, {signal})
+    const preSignedOutput = await httpClient.files.createPreSignedUpload({fileName: file.name, module: 'ai-chat-attachments', contentMd5, sizeBytes: file.size}, {signal})
 
     if (preSignedOutput.support) {
       if (!preSignedOutput.url || !preSignedOutput.fileUk) throw new ApiError("POST","/files/pre-signed",undefined,"",{kind:"protocol"});
@@ -76,8 +76,10 @@ function uploadViaXhr(
     signal?.addEventListener("abort", abort, {once: true});
     xhr.onloadend = () => signal?.removeEventListener("abort", abort);
     xhr.onabort = () => reject(new DOMException("上传已取消", "AbortError"));
-    xhr.open('PUT', signed.url!, true)
-    xhr.setRequestHeader('Content-MD5', contentMd5)
+    // 后端可能签发 PUT 或对象存储表单 POST；按响应协议发送，不能一律 PUT。
+    const formUpload = signed.uploadMethod === "POST_FORM";
+    xhr.open(formUpload ? 'POST' : 'PUT', signed.url!, true)
+    if (!formUpload) xhr.setRequestHeader('Content-MD5', contentMd5)
 
     xhr.onerror = () => reject(new Error("文件上传失败"))
     xhr.onload = () => {
@@ -89,7 +91,14 @@ function uploadViaXhr(
     }
 
     try {
-      xhr.send(file)
+      if (formUpload) {
+        const form = new FormData()
+        Object.entries(signed.formFields ?? {}).forEach(([name, value]) => form.append(name, value))
+        form.append('file', file, file.name)
+        xhr.send(form)
+      } else {
+        xhr.send(file)
+      }
     } catch {
       reject(new Error("文件上传失败"))
     }

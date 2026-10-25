@@ -10,8 +10,8 @@ const run = (args: string[], cwd: string) => new Promise<void>((resolve, reject)
 });
 const write = async (directory: string, file: string, value: string) => {const destination = path.join(directory, file); await mkdir(path.dirname(destination),{recursive:true}); await writeFile(destination,value);};
 await mkdir("artifacts", {recursive:true});
-// SDK 尚未发布，隔离的本地 npm fixture 仅提供该 SDK 的真实 tarball，其他依赖照常安装。
-const sdkBytes = await readFile(path.join(root, ".cache/sdk/lingya-ai-agents-sdk-0.7.0.tgz"));
+// SDK 0.7.1 已发布；仍用本地 tarball fixture 保证安装验证可重复。
+const sdkBytes = await readFile(path.join(root, ".cache/sdk/lingya-ai-agents-sdk-0.7.1.tgz"));
 const sdkProvenance = JSON.parse(await readFile("provenance/sdk.json", "utf8")) as {version:string;localTarballSha256:string};
 if (createHash("sha256").update(sdkBytes).digest("hex") !== sdkProvenance.localTarballSha256) throw new Error("SDK 包摘要与来源记录不一致");
 const sdkPackage = JSON.parse(await readFile(path.join(root, "node_modules/@lingya-ai/agents-sdk/package.json"), "utf8"));
@@ -32,7 +32,7 @@ for (const framework of ["vite", "next"] as const) {
   const directory = path.join(root, ".cache/consumers/0.2.0", framework);
   const alias = framework === "vite" ? "~" : "@";
   const manifest = {name:`xlt-install-${framework}`,private:true,type:"module",packageManager:"pnpm@10.30.2",
-    dependencies:{react:"19.2.0","react-dom":"19.2.0",...(framework === "next" ? {next:"16.1.6"}: {})},
+    dependencies:{react:"19.2.0","react-dom":"19.2.0","@lingya-ai/agents-sdk":"0.7.1",...(framework === "next" ? {next:"16.1.6"}: {})},
     devDependencies:{typescript:"5.9.3","@types/react":"19.2.0","@types/react-dom":"19.2.0","@types/node":"22.19.0",tailwindcss:"4.1.11","@tailwindcss/postcss":"4.1.11",...(framework === "vite" ? {vite:"6.4.1"}: {})}};
   await write(directory,"package.json",JSON.stringify(manifest,null,2));
   await write(directory,"pnpm-workspace.yaml","packages: []\n");
@@ -60,7 +60,7 @@ for (const framework of ["vite", "next"] as const) {
   }
   await run(["exec","tsc","--noEmit"],directory);
   await run(["exec",framework,"build"],directory);
-  await writeFile(`artifacts/install-${framework}.json`,JSON.stringify({framework,alias,directory,installed,typecheck:"passed",build:"passed",registryVersion:"0.2.0",sdkVersion:"0.7.0",sdkSource:"local-tarball"},null,2));
+  await writeFile(`artifacts/install-${framework}.json`,JSON.stringify({framework,alias,directory,installed,typecheck:"passed",build:"passed",registryVersion:"0.2.0",sdkVersion:sdkPackage.version,sdkSource:"local-tarball"},null,2));
 }
 
 } finally { await new Promise<void>((resolve,reject) => sdkRegistry.close(error => error ? reject(error) : resolve())); }

@@ -39,7 +39,7 @@
 
 ## 本地运行
 
-需要 Node.js 22+ 与 pnpm 10.30.2。SDK 0.7.0 当前尚未发布 npm，本地使用 tarball override；先按 docs/migration-0.2.0.md 准备 SDK 包。
+需要 Node.js 22+ 与 pnpm 10.30.2。SDK `0.7.1` 已发布 npm，包含预签名上传所需的 `sizeBytes`、`uploadMethod`、`formFields`、`maximumBytes`；仓库仍按 docs/migration-0.2.0.md 使用本地 tarball 固定该版本。
 
 ```sh
 pnpm install

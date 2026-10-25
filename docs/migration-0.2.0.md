@@ -1,6 +1,6 @@
 # 0.2.0 SDK 接入升级说明
 
-本地候选版本使用 @lingya-ai/agents-sdk 0.7.0 / 契约 0.1.7，未远程部署或发布。0.1.0 快照保留不覆盖。
+本地候选版本使用 @lingya-ai/agents-sdk 0.7.1 / 契约 0.1.7，未远程部署或发布。0.1.0 快照保留不覆盖。
 
 ## 接入变化
 
@@ -20,11 +20,11 @@
 
 ## 安装与一起升级的文件
 
-升级时一起审查 agent-client、agent-server、agent-session 与使用的展示条目；不要只覆盖消息组件。Registry 版本路径为 /r/0.2.0/，SDK 固定 0.7.0。SDK 类型、协议状态文件和展示组件须保持同批版本。
+升级时一起审查 agent-client、agent-server、agent-session 与使用的展示条目；不要只覆盖消息组件。Registry 版本路径为 /r/0.2.0/，SDK 固定 0.7.1。SDK 类型、协议状态文件和展示组件须保持同批版本。
 
-截至 2026-10-21，npm 尚无 SDK 0.7.0。当前 pnpm override 指向本地 .cache/sdk/lingya-ai-agents-sdk-0.7.0.tgz，独立安装验证也显式使用本地包。Registry 不包含本机路径。公开使用前必须发布或取得可访问的 SDK 包；本地验证不证明 npm 安装已可用。
+2026-10-23 更新：SDK 0.7.1 已发布 npm，包含后端要求的预签名上传字段 `sizeBytes`、`uploadMethod`、`formFields`、`maximumBytes`，上传 Hook 会申报 `file.size`。仓库不再使用 pnpm patch，改为在 .cache/sdk 固定 0.7.1 tarball。正式 Registry 发布时应切换到 npm 依赖并递增 Registry 版本。
 
-本地复现时先在相邻 openapi-sdk/lingya-agents-sdk-typescript 执行 npm run build，再执行 npm pack --pack-destination 指向本项目 .cache/sdk 的绝对路径，随后在本项目执行 pnpm install。SDK 包摘要记录在 provenance/sdk.json，不能静默替换同版本包。
+本地复现时可直接使用已发布的 `@lingya-ai/agents-sdk@0.7.1`，也可在相邻 lingya-agents-sdk-typescript 执行 npm run build 与 npm pack，将 tarball 放入 .cache/sdk 后执行 pnpm install。SDK 包摘要记录在 provenance/sdk.json，不能静默替换同版本包。
 
 ## 已知 SDK 边界与验证
 

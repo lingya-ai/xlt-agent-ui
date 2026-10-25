@@ -86,7 +86,7 @@
         "@dnd-kit/react@0.5.1",
         "@file-viewer/pptx@3.2.2",
         "@hookform/resolvers@5.9.2",
-        "@lingya-ai/agents-sdk@0.7.0",
+        "@lingya-ai/agents-sdk@0.7.1",
         "@radix-ui/react-alert-dialog@1.2.1",
         "@radix-ui/react-checkbox@1.4.1",
         "@radix-ui/react-collapsible@1.2.1",
@@ -1691,7 +1691,7 @@
         "contract": "openapi/v1",
         "contractVersion": "0.1.7",
         "sdk": "@lingya-ai/agents-sdk",
-        "sdkVersion": "0.7.0",
+        "sdkVersion": "0.7.1",
         "source": "provenance/source.json",
         "sdkSource": "provenance/sdk.json"
       },
@@ -1742,7 +1742,7 @@
         "contract": "openapi/v1",
         "contractVersion": "0.1.7",
         "sdk": "@lingya-ai/agents-sdk",
-        "sdkVersion": "0.7.0",
+        "sdkVersion": "0.7.1",
         "source": "provenance/source.json",
         "sdkSource": "provenance/sdk.json"
       },
@@ -1755,7 +1755,7 @@
       "title": "agent-client",
       "description": "SDK 标准客户端、公开类型与契约索引",
       "dependencies": [
-        "@lingya-ai/agents-sdk@0.7.0"
+        "@lingya-ai/agents-sdk@0.7.1"
       ],
       "registryDependencies": [],
       "files": [
@@ -1795,7 +1795,7 @@
         "contract": "openapi/v1",
         "contractVersion": "0.1.7",
         "sdk": "@lingya-ai/agents-sdk",
-        "sdkVersion": "0.7.0",
+        "sdkVersion": "0.7.1",
         "source": "provenance/source.json",
         "sdkSource": "provenance/sdk.json"
       },
@@ -1808,7 +1808,7 @@
       "title": "agent-server",
       "description": "服务端签名、短期令牌签发与认证 Handler",
       "dependencies": [
-        "@lingya-ai/agents-sdk@0.7.0"
+        "@lingya-ai/agents-sdk@0.7.1"
       ],
       "registryDependencies": [],
       "files": [
@@ -1843,7 +1843,7 @@
         "contract": "openapi/v1",
         "contractVersion": "0.1.7",
         "sdk": "@lingya-ai/agents-sdk",
-        "sdkVersion": "0.7.0",
+        "sdkVersion": "0.7.1",
         "source": "provenance/source.json",
         "sdkSource": "provenance/sdk.json"
       },
@@ -1856,7 +1856,7 @@
       "title": "agent-session",
       "description": "流式事件、历史恢复、完整接口 Hook 与身份 Provider",
       "dependencies": [
-        "@lingya-ai/agents-sdk@0.7.0",
+        "@lingya-ai/agents-sdk@0.7.1",
         "@radix-ui/react-tooltip@1.4.1",
         "ahooks@3.10.0",
         "clsx@2.1.1",
@@ -2188,7 +2188,7 @@
         "contract": "openapi/v1",
         "contractVersion": "0.1.7",
         "sdk": "@lingya-ai/agents-sdk",
-        "sdkVersion": "0.7.0",
+        "sdkVersion": "0.7.1",
         "source": "provenance/source.json",
         "sdkSource": "provenance/sdk.json"
       },
@@ -2201,7 +2201,7 @@
       "title": "agent-messages",
       "description": "消息、工具过程、引用和执行状态渲染",
       "dependencies": [
-        "@lingya-ai/agents-sdk@0.7.0",
+        "@lingya-ai/agents-sdk@0.7.1",
         "@radix-ui/react-checkbox@1.4.1",
         "@radix-ui/react-collapsible@1.2.1",
         "@radix-ui/react-dialog@1.3.1",
@@ -3096,7 +3096,7 @@
         "contract": "openapi/v1",
         "contractVersion": "0.1.7",
         "sdk": "@lingya-ai/agents-sdk",
-        "sdkVersion": "0.7.0",
+        "sdkVersion": "0.7.1",
         "source": "provenance/source.json",
         "sdkSource": "provenance/sdk.json"
       },
@@ -3110,7 +3110,7 @@
       "description": "输入框、附件、模型、目标模式与发送控制",
       "dependencies": [
         "@hookform/resolvers@5.9.2",
-        "@lingya-ai/agents-sdk@0.7.0",
+        "@lingya-ai/agents-sdk@0.7.1",
         "@radix-ui/react-alert-dialog@1.2.1",
         "@radix-ui/react-collapsible@1.2.1",
         "@radix-ui/react-dialog@1.3.1",
@@ -3771,7 +3771,7 @@
         "contract": "openapi/v1",
         "contractVersion": "0.1.7",
         "sdk": "@lingya-ai/agents-sdk",
-        "sdkVersion": "0.7.0",
+        "sdkVersion": "0.7.1",
         "source": "provenance/source.json",
         "sdkSource": "provenance/sdk.json"
       },
@@ -3785,7 +3785,7 @@
       "description": "会话目录、分组、标题、归档与活动状态",
       "dependencies": [
         "@dnd-kit/react@0.5.1",
-        "@lingya-ai/agents-sdk@0.7.0",
+        "@lingya-ai/agents-sdk@0.7.1",
         "@radix-ui/react-alert-dialog@1.2.1",
         "@radix-ui/react-dialog@1.3.1",
         "@radix-ui/react-dropdown-menu@2.2.1",
@@ -4115,7 +4115,7 @@
         "contract": "openapi/v1",
         "contractVersion": "0.1.7",
         "sdk": "@lingya-ai/agents-sdk",
-        "sdkVersion": "0.7.0",
+        "sdkVersion": "0.7.1",
         "source": "provenance/source.json",
         "sdkSource": "provenance/sdk.json"
       },
@@ -4128,7 +4128,7 @@
       "title": "agent-interactions",
       "description": "计划审批与用户回答",
       "dependencies": [
-        "@lingya-ai/agents-sdk@0.7.0",
+        "@lingya-ai/agents-sdk@0.7.1",
         "@radix-ui/react-checkbox@1.4.1",
         "@radix-ui/react-collapsible@1.2.1",
         "@radix-ui/react-label@2.1.17",
@@ -4481,7 +4481,7 @@
         "contract": "openapi/v1",
         "contractVersion": "0.1.7",
         "sdk": "@lingya-ai/agents-sdk",
-        "sdkVersion": "0.7.0",
+        "sdkVersion": "0.7.1",
         "source": "provenance/source.json",
         "sdkSource": "provenance/sdk.json"
       },
@@ -4495,7 +4495,7 @@
       "description": "目标创建与完整生命周期模拟接入示例",
       "dependencies": [
         "@hookform/resolvers@5.9.2",
-        "@lingya-ai/agents-sdk@0.7.0",
+        "@lingya-ai/agents-sdk@0.7.1",
         "@radix-ui/react-alert-dialog@1.2.1",
         "@radix-ui/react-dialog@1.3.1",
         "@radix-ui/react-label@2.1.17",
@@ -4868,7 +4868,7 @@
         "contract": "openapi/v1",
         "contractVersion": "0.1.7",
         "sdk": "@lingya-ai/agents-sdk",
-        "sdkVersion": "0.7.0",
+        "sdkVersion": "0.7.1",
         "source": "provenance/source.json",
         "sdkSource": "provenance/sdk.json"
       },
@@ -4882,7 +4882,7 @@
       "description": "目标编辑、运行控制与历史",
       "dependencies": [
         "@hookform/resolvers@5.9.2",
-        "@lingya-ai/agents-sdk@0.7.0",
+        "@lingya-ai/agents-sdk@0.7.1",
         "@radix-ui/react-alert-dialog@1.2.1",
         "@radix-ui/react-dialog@1.3.1",
         "@radix-ui/react-label@2.1.17",
@@ -5209,7 +5209,7 @@
         "contract": "openapi/v1",
         "contractVersion": "0.1.7",
         "sdk": "@lingya-ai/agents-sdk",
-        "sdkVersion": "0.7.0",
+        "sdkVersion": "0.7.1",
         "source": "provenance/source.json",
         "sdkSource": "provenance/sdk.json"
       },
@@ -5222,7 +5222,7 @@
       "title": "agent-async-tasks",
       "description": "异步任务和通知同步",
       "dependencies": [
-        "@lingya-ai/agents-sdk@0.7.0",
+        "@lingya-ai/agents-sdk@0.7.1",
         "@radix-ui/react-collapsible@1.2.1",
         "@radix-ui/react-scroll-area@1.4.0",
         "@radix-ui/react-tooltip@1.4.1",
@@ -5431,7 +5431,7 @@
         "contract": "openapi/v1",
         "contractVersion": "0.1.7",
         "sdk": "@lingya-ai/agents-sdk",
-        "sdkVersion": "0.7.0",
+        "sdkVersion": "0.7.1",
         "source": "provenance/source.json",
         "sdkSource": "provenance/sdk.json"
       },
@@ -5444,7 +5444,7 @@
       "title": "agent-subagents",
       "description": "子 Agent、结果和取消控制",
       "dependencies": [
-        "@lingya-ai/agents-sdk@0.7.0",
+        "@lingya-ai/agents-sdk@0.7.1",
         "@radix-ui/react-checkbox@1.4.1",
         "@radix-ui/react-collapsible@1.2.1",
         "@radix-ui/react-dialog@1.3.1",
@@ -6364,7 +6364,7 @@
         "contract": "openapi/v1",
         "contractVersion": "0.1.7",
         "sdk": "@lingya-ai/agents-sdk",
-        "sdkVersion": "0.7.0",
+        "sdkVersion": "0.7.1",
         "source": "provenance/source.json",
         "sdkSource": "provenance/sdk.json"
       },
@@ -6378,7 +6378,7 @@
       "description": "制品目录、工作区与文件预览",
       "dependencies": [
         "@hookform/resolvers@5.9.2",
-        "@lingya-ai/agents-sdk@0.7.0",
+        "@lingya-ai/agents-sdk@0.7.1",
         "@radix-ui/react-alert-dialog@1.2.1",
         "@radix-ui/react-checkbox@1.4.1",
         "@radix-ui/react-collapsible@1.2.1",
@@ -7385,7 +7385,7 @@
         "contract": "openapi/v1",
         "contractVersion": "0.1.7",
         "sdk": "@lingya-ai/agents-sdk",
-        "sdkVersion": "0.7.0",
+        "sdkVersion": "0.7.1",
         "source": "provenance/source.json",
         "sdkSource": "provenance/sdk.json"
       },
@@ -7399,7 +7399,7 @@
       "description": "附件上传和多格式文件预览",
       "dependencies": [
         "@file-viewer/pptx@3.2.2",
-        "@lingya-ai/agents-sdk@0.7.0",
+        "@lingya-ai/agents-sdk@0.7.1",
         "@radix-ui/react-scroll-area@1.4.0",
         "@radix-ui/react-slot@1.5.0",
         "@radix-ui/react-tabs@1.2.1",
@@ -7744,7 +7744,7 @@
         "contract": "openapi/v1",
         "contractVersion": "0.1.7",
         "sdk": "@lingya-ai/agents-sdk",
-        "sdkVersion": "0.7.0",
+        "sdkVersion": "0.7.1",
         "source": "provenance/source.json",
         "sdkSource": "provenance/sdk.json"
       },
@@ -7757,7 +7757,7 @@
       "title": "agent-citations",
       "description": "知识引用展示和元数据查询",
       "dependencies": [
-        "@lingya-ai/agents-sdk@0.7.0",
+        "@lingya-ai/agents-sdk@0.7.1",
         "@radix-ui/react-dialog@1.3.1",
         "@radix-ui/react-scroll-area@1.4.0",
         "@radix-ui/react-slot@1.5.0",
@@ -7898,7 +7898,7 @@
         "contract": "openapi/v1",
         "contractVersion": "0.1.7",
         "sdk": "@lingya-ai/agents-sdk",
-        "sdkVersion": "0.7.0",
+        "sdkVersion": "0.7.1",
         "source": "provenance/source.json",
         "sdkSource": "provenance/sdk.json"
       },
@@ -7911,7 +7911,7 @@
       "title": "agent-sql",
       "description": "SQL 数据分页、图表与导出",
       "dependencies": [
-        "@lingya-ai/agents-sdk@0.7.0",
+        "@lingya-ai/agents-sdk@0.7.1",
         "@radix-ui/react-slot@1.5.0",
         "@radix-ui/react-tabs@1.2.1",
         "ahooks@3.10.0",
@@ -8324,7 +8324,7 @@
         "contract": "openapi/v1",
         "contractVersion": "0.1.7",
         "sdk": "@lingya-ai/agents-sdk",
-        "sdkVersion": "0.7.0",
+        "sdkVersion": "0.7.1",
         "source": "provenance/source.json",
         "sdkSource": "provenance/sdk.json"
       },
@@ -8338,7 +8338,7 @@
       "description": "基础聊天组合，重型预览与图表按需安装",
       "dependencies": [
         "@hookform/resolvers@5.9.2",
-        "@lingya-ai/agents-sdk@0.7.0",
+        "@lingya-ai/agents-sdk@0.7.1",
         "@radix-ui/react-alert-dialog@1.2.1",
         "@radix-ui/react-checkbox@1.4.1",
         "@radix-ui/react-collapsible@1.2.1",
@@ -9652,7 +9652,7 @@
         "contract": "openapi/v1",
         "contractVersion": "0.1.7",
         "sdk": "@lingya-ai/agents-sdk",
-        "sdkVersion": "0.7.0",
+        "sdkVersion": "0.7.1",
         "source": "provenance/source.json",
         "sdkSource": "provenance/sdk.json"
       },
@@ -9668,7 +9668,7 @@
         "@dnd-kit/react@0.5.1",
         "@file-viewer/pptx@3.2.2",
         "@hookform/resolvers@5.9.2",
-        "@lingya-ai/agents-sdk@0.7.0",
+        "@lingya-ai/agents-sdk@0.7.1",
         "@radix-ui/react-alert-dialog@1.2.1",
         "@radix-ui/react-checkbox@1.4.1",
         "@radix-ui/react-collapsible@1.2.1",
@@ -11258,7 +11258,7 @@
         "contract": "openapi/v1",
         "contractVersion": "0.1.7",
         "sdk": "@lingya-ai/agents-sdk",
-        "sdkVersion": "0.7.0",
+        "sdkVersion": "0.7.1",
         "source": "provenance/source.json",
         "sdkSource": "provenance/sdk.json"
       },
@@ -11272,7 +11272,7 @@
       "description": "历史只读与事件回放",
       "dependencies": [
         "@hookform/resolvers@5.9.2",
-        "@lingya-ai/agents-sdk@0.7.0",
+        "@lingya-ai/agents-sdk@0.7.1",
         "@radix-ui/react-alert-dialog@1.2.1",
         "@radix-ui/react-checkbox@1.4.1",
         "@radix-ui/react-collapsible@1.2.1",
@@ -12366,7 +12366,7 @@
         "contract": "openapi/v1",
         "contractVersion": "0.1.7",
         "sdk": "@lingya-ai/agents-sdk",
-        "sdkVersion": "0.7.0",
+        "sdkVersion": "0.7.1",
         "source": "provenance/source.json",
         "sdkSource": "provenance/sdk.json"
       },
